@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-// import "./sass/app.scss";
 import "./App.scss";
 import Header from "./components/Header";
 import axios from "axios";
