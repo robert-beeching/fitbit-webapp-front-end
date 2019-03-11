@@ -1,0 +1,21 @@
+.table-container {
+  max-height: 750px;
+  overflow: scroll;
+}
+
+.table {
+  thead {
+    th {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      outline: 1px solid #dee2e6;
+      outline-offset: -1px;
+      border-bottom: 0;
+    }
+  }
+
+  tbody tr:first-child td {
+    border-top: 0;
+  }
+}

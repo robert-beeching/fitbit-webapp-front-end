@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import Dashboard from "@material-ui/icons/Dashboard";
 import Navigation from "./Navigation.js";
-import { MuiThemeProvider } from "@material-ui/core";
 
 const Header = props => (
   <Fragment>

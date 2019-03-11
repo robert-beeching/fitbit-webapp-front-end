@@ -20,7 +20,7 @@ const Navigation = props => (
           <li
             className={
               "navigation__list__item " +
-              (props.currentSection === "Steps"
+              (props.currentSection === "steps"
                 ? "navigation__list__item--active"
                 : "")
             }

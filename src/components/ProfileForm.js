@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 class ProfileForm extends Component {
   componentWillMount() {}
@@ -116,5 +115,3 @@ class ProfileForm extends Component {
   }
 }
 export default ProfileForm;
-
-ProfileForm.propTypes = {};

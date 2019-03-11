@@ -66,7 +66,7 @@ class App extends Component {
     axios
       .get("/api/profile")
       .then(response => {
-        console.log("got profile info");
+        console.log("Retrieved profile");
         this.setState({
           user: response.data,
           retrievedProfile: true
@@ -81,7 +81,7 @@ class App extends Component {
     axios
       .get("/api/steps")
       .then(response => {
-        console.log("got steps info");
+        console.log("Retrieved steps");
         this.setState({
           steps: response.data
         });
@@ -110,7 +110,6 @@ class App extends Component {
     const updatedUser = { ...this.state.user };
     updatedUser[event.target.name] = event.target.value;
     this.setState({ user: updatedUser });
-    console.log("profile form input changed - App component");
   };
 
   updateProfile = () => {};

@@ -2,3 +2,17 @@ $primary-colour: #006fe8;
 $base-text-colour: #464646;
 
 $border-radius-standard: 6px;
+$default-spacing: 1rem;
+
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+) !default;
+
+// MOBILE-FIRST
+$xs-up: "(min-width:#{map-get($breakpoints, xs)})" !default;
+$sm-up: "(min-width:#{map-get($breakpoints, sm)})" !default;
+$md-up: "(min-width:#{map-get($breakpoints, md)})" !default;
+$lg-up: "(min-width:#{map-get($breakpoints, lg)})" !default;

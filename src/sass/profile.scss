@@ -1,8 +1,10 @@
-.profile-head {
-  margin-bottom: 1rem;
+.profile {
+  &-head {
+    margin-bottom: $default-spacing;
 
-  &__name {
-    display: flex;
-    align-items: center;
+    &__name {
+      display: flex;
+      align-items: center;
+    }
   }
 }
