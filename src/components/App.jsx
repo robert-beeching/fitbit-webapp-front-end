@@ -9,7 +9,7 @@ import Profile from "./Profile";
 import Steps from "./Steps";
 import Sleep from "./Sleep";
 import Login from "./Login";
-import history from "../history";
+import history from "../utils/history";
 import Logout from "./Logout";
 
 class App extends Component {
