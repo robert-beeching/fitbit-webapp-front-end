@@ -1,16 +1,16 @@
 import React, { Component, Fragment } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import "./App.scss";
-import Header from "./components/Header";
+import "../sass/App.scss";
+import Header from "./Header";
 import axios from "axios";
 import { Router, Route, Switch } from "react-router-dom";
-import NotFound from "./components/NotFound";
-import Profile from "./components/Profile";
-import Steps from "./components/Steps";
-import Sleep from "./components/Sleep";
-import Login from "./components/Login";
-import history from "./history";
-import Logout from "./components/Logout";
+import NotFound from "./NotFound";
+import Profile from "./Profile";
+import Steps from "./Steps";
+import Sleep from "./Sleep";
+import Login from "./Login";
+import history from "../history";
+import Logout from "./Logout";
 
 class App extends Component {
   constructor(props) {
