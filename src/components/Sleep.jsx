@@ -1,7 +1,8 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 class Sleep extends React.Component {
-  componentWillMount() {
+  constructor(props) {
+    super(props);
     this.props.updateCurrentSection("sleep");
   }
 
@@ -9,5 +10,9 @@ class Sleep extends React.Component {
     return <h2>Sleep</h2>;
   }
 }
+
+Sleep.propTypes = {
+  updateCurrentSection: PropTypes.func.isRequired
+};
 
 export default Sleep;

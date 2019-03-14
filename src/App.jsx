@@ -31,6 +31,10 @@ class App extends Component {
       loggedIn: false
     };
     this.state.retrievedProfile = false;
+    this.retrieveProfileInfo = this.retrieveProfileInfo.bind(this);
+    this.updateCurrentSection = this.updateCurrentSection.bind(this);
+    this.handleProfileInputChange = this.handleProfileInputChange.bind(this);
+    this.retrieveSteps = this.retrieveSteps.bind(this);
   }
 
   componentDidMount() {
@@ -54,11 +58,11 @@ class App extends Component {
       });
   }
 
-  updateCurrentSection = sectionName => {
+  updateCurrentSection(sectionName) {
     this.setState({ currentSection: sectionName });
-  };
+  }
 
-  retrieveProfileInfo = () => {
+  retrieveProfileInfo() {
     if (this.state.retrievedProfile) {
       return;
     }
@@ -75,9 +79,9 @@ class App extends Component {
       .catch(error => {
         console.log(error);
       });
-  };
+  }
 
-  retrieveSteps = () => {
+  retrieveSteps() {
     axios
       .get("/api/steps")
       .then(response => {
@@ -89,30 +93,31 @@ class App extends Component {
       .catch(error => {
         console.log(error);
       });
-  };
+  }
 
-  handleLogin = () => {
+  handleLogin() {
     window.location.assign("/auth/authorize");
-  };
+  }
 
-  handleLogout = () => {
+  handleLogout() {
     axios
       .get("/auth/logout")
       .then(response => {
         window.location.assign("/");
+        console.log("Error logging out" + response);
       })
       .catch(error => {
-        console.log("Error logging out");
+        console.log("Error logging out" + error);
       });
-  };
+  }
 
-  handleProfileInputChange = event => {
+  handleProfileInputChange(event) {
     const updatedUser = { ...this.state.user };
     updatedUser[event.target.name] = event.target.value;
     this.setState({ user: updatedUser });
-  };
+  }
 
-  updateProfile = () => {};
+  updateProfile() { }
 
   render() {
     return (
@@ -170,7 +175,7 @@ class App extends Component {
               <Route
                 exact
                 path="/logout"
-                render={routeProps => (
+                render={() => (
                   <Logout handleLogout={this.handleLogout} />
                 )}
               />

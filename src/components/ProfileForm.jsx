@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-
+import PropTypes from "prop-types";
 class ProfileForm extends Component {
-  componentWillMount() {}
-
-  componentDidMount() {}
-
-  handleInputChange = event => {
+  handleInputChange(event) {
     this.props.handleInputChange(event);
-  };
+  }
 
   render() {
     const user = this.props.user;
@@ -114,4 +110,10 @@ class ProfileForm extends Component {
     );
   }
 }
+
+ProfileForm.propTypes = {
+  handleInputChange: PropTypes.func.isRequired,
+  user: PropTypes.object
+};
+
 export default ProfileForm;

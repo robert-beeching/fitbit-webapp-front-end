@@ -39,12 +39,8 @@ class StepsGraph extends Component {
 }
 
 StepsGraph.propTypes = {
-  steps: PropTypes.arrayOf(
-    PropTypes.shape({
-      dateTime: PropTypes.string,
-      value: PropTypes.number
-    })
-  )
+  filteredStepValues: PropTypes.array,
+  filteredStepDates: PropTypes.array
 };
 
 export default StepsGraph;

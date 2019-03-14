@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 class Logout extends Component {
   componentDidMount() {
-    console.log("logout component mounted");
     this.props.handleLogout();
   }
 
@@ -13,7 +12,7 @@ class Logout extends Component {
 }
 
 Logout.propTypes = {
-  profile: PropTypes.object
+  handleLogout: PropTypes.func.isRequired
 };
 
 export default Logout;

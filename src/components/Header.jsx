@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Dashboard from "@material-ui/icons/Dashboard";
-import Navigation from "./Navigation.js";
+import Navigation from "./Navigation";
+import PropTypes from "prop-types";
 
 const Header = props => (
   <Fragment>
@@ -20,4 +21,11 @@ const Header = props => (
     ) : null}
   </Fragment>
 );
+
+Header.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
+  avatarUrl: PropTypes.string.isRequired,
+  currentSection: PropTypes.string.isRequired
+};
+
 export default Header;

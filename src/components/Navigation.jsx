@@ -1,6 +1,7 @@
 import React from "react";
 import { Router, Link } from "react-router-dom";
 import history from "../history";
+import PropTypes from "prop-types";
 
 const Navigation = props => (
   <Router history={history}>
@@ -68,5 +69,10 @@ const Navigation = props => (
     </nav>
   </Router>
 );
+
+Navigation.propTypes = {
+  currentSection: PropTypes.string.isRequired,
+  avatarUrl: PropTypes.string.isRequired
+}
 
 export default Navigation;

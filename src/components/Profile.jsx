@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import ProfileForm from "./ProfileForm";
 
 class Profile extends Component {
-  componentWillMount() {
+  constructor(props) {
+    super(props)
     this.props.updateCurrentSection("profile");
   }
 
@@ -40,5 +41,8 @@ class Profile extends Component {
 export default Profile;
 
 Profile.propTypes = {
-  profile: PropTypes.object
+  user: PropTypes.object,
+  handleInputChange: PropTypes.func,
+  retrieveProfileInfo: PropTypes.func,
+  updateCurrentSection: PropTypes.func
 };

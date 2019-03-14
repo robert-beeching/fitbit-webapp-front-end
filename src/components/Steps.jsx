@@ -2,10 +2,12 @@ import React, { Fragment } from "react";
 import ButtonGroup from "./generic/ButtonGroup";
 import StepsTable from "./StepsTable";
 import StepsGraph from "./StepsGraph";
+import PropTypes from "prop-types";
 
 class Steps extends React.Component {
   constructor(props) {
     super(props);
+    this.props.updateCurrentSection("steps");
     this.displayTypeButtons = {
       groupName: "displayType",
       buttons: [
@@ -40,21 +42,13 @@ class Steps extends React.Component {
       buttonGroupValues: {}
     };
 
-    this.state.buttonGroupValues[
-      this.displayTypeButtons.groupName
-    ] = this.displayTypeButtons.buttons[0].name;
-    this.state.buttonGroupValues[
-      this.timePeriodButtons.groupName
-    ] = this.timePeriodButtons.buttons[0].name;
+    this.state.buttonGroupValues[this.displayTypeButtons.groupName] = this.displayTypeButtons.buttons[0].name;
+    this.state.buttonGroupValues[this.timePeriodButtons.groupName] = this.timePeriodButtons.buttons[0].name;
     this.handleOptionsButtonClick = this.handleOptionsButtonClick.bind(this);
   }
 
-  componentWillMount() {
-    this.props.updateCurrentSection("steps");
-  }
-
   componentDidMount() {
-    if (!this.props.steps.length) {
+    if (![...this.props.steps].length) {
       this.props.retrieveSteps();
     }
   }
@@ -70,7 +64,7 @@ class Steps extends React.Component {
   render() {
     const timePeriod = this.state.buttonGroupValues.timePeriod;
     const stepValues = this.props.steps.length;
-    const refinedStepsArray = this.props.steps.slice(
+    const refinedStepsArray = [...this.props.steps].slice(
       stepValues - timePeriod,
       stepValues
     );
@@ -95,7 +89,7 @@ class Steps extends React.Component {
                 buttons={this.displayTypeButtons.buttons}
                 activeButtonKey={
                   this.state.buttonGroupValues[
-                    this.displayTypeButtons.groupName
+                  this.displayTypeButtons.groupName
                   ]
                 }
                 groupName="displayType"
@@ -125,14 +119,20 @@ class Steps extends React.Component {
         {this.state.buttonGroupValues.displayType === "table" ? (
           <StepsTable steps={refinedStepsArray} />
         ) : (
-          <StepsGraph
-            filteredStepValues={filteredStepValues}
-            filteredStepDates={filteredStepDates}
-          />
-        )}
+            <StepsGraph
+              filteredStepValues={filteredStepValues}
+              filteredStepDates={filteredStepDates}
+            />
+          )}
       </Fragment>
     );
   }
 }
+
+Steps.propTypes = {
+  updateCurrentSection: PropTypes.func.isRequired,
+  retrieveSteps: PropTypes.func.isRequired,
+  steps: PropTypes.array
+};
 
 export default Steps;

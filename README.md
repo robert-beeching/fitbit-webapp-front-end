@@ -23,6 +23,7 @@ Deploy:
 This project is work in progress. There is much functionality yet to be added, and refactoring of code. Some todo's are:
 
 - Real time notifications to user using an SMS api, perhaps for updates during the week of progress vs average / benchmark
+- Testing
 - More analysis, graphs, tables for data.
 - Implement Web API subscriptions to ensure database holds most recent data
 - Create own design, move away from Bootstrap (bootstrap used to get things up and running quickly whilst looking reasonable!)

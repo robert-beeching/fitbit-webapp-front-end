@@ -13,7 +13,7 @@ class Login extends Component {
               className="btn btn-primary"
               onClick={this.props.handleLogin}
             >
-              Authorize through Fitbit >
+              Authorize through Fitbit
             </button>
           </div>
         </div>
@@ -26,5 +26,7 @@ class Login extends Component {
 export default Login;
 
 Login.propTypes = {
-  authCode: PropTypes.string
+  authCode: PropTypes.string,
+  loggedIn: PropTypes.bool.isRequired,
+  handleLogin: PropTypes.func.isRequired
 };

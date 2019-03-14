@@ -42,9 +42,13 @@ class ButtonGroup extends Component {
 }
 
 ButtonGroup.propTypes = {
-  buttons: PropTypes.arrayOf(
-    PropTypes.shape({ name: PropTypes.string, text: PropTypes.string })
-  ).isRequired
+  handleButtonClick: PropTypes.func.isRequired,
+  buttons: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    name: PropTypes.string
+  })).isRequired,
+  groupName: PropTypes.string.isRequired,
+  activeButtonKey: PropTypes.string.isRequired
 };
 
 export default ButtonGroup;
