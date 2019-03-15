@@ -22,6 +22,7 @@ Deploy:
 
 This project is work in progress. There is much functionality yet to be added, and refactoring of code. Some todo's are:
 
+- Implement state management module such as Redux as application grows in complexity
 - Real time notifications to user using an SMS api, perhaps for updates during the week of progress vs average / benchmark
 - Testing
 - More analysis, graphs, tables for data.
